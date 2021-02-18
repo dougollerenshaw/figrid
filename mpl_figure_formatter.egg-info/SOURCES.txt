@@ -1,7 +1,0 @@
-README.md
-setup.py
-mpl_figure_formatter.egg-info/PKG-INFO
-mpl_figure_formatter.egg-info/SOURCES.txt
-mpl_figure_formatter.egg-info/dependency_links.txt
-mpl_figure_formatter.egg-info/requires.txt
-mpl_figure_formatter.egg-info/top_level.txt
