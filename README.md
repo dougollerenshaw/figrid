@@ -3,9 +3,12 @@ Utilities for formatting matplotlib figures
 
 # sample use:
 
+    # import package
     import mpl_figure_formatter as ff
+    # import example figure code
     from example_figures import *
 
+    # define function to set up figure and axes
     def make_fig_ax():
         fig = plt.figure(figsize=(11,8.5))
         ax = {
@@ -17,7 +20,10 @@ Utilities for formatting matplotlib figures
         
         return fig, ax
 
+    # call function to make figure and axes
     fig, ax = make_fig_ax()
+
+    # call individual plotting functions, with axes as inputs
     heatmap(ax['panel_A'])
     sinusoids(ax['panel_B'])
     violins(ax['panel_C'])
