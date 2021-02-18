@@ -75,8 +75,32 @@ def place_axes_on_grid(
     inner_ax = np.array(inner_ax).squeeze().tolist()  # remove redundant dimension
     return inner_ax
 
-def scalebar(axis, x_pos, y_pos, x_length=None, y_length=None, x_text=None, y_text=None, x_buffer=0.25, y_buffer=0.25, scalebar_color='black', text_color='black', fontsize=10, linewidth=3):
 
+def add_label(fig, label_text, xpos, ypos, **kwargs):
+    '''
+    add labels to a figure canvas using the placeAxesOnGrid infrastructure
+    fig: figure handle
+    label_text : text of label, 
+    xpos, ypos: floats from 0 to 1 defining where on the canvas the label should be
+    kwargs: additional keyword arguments for matplotlib text()
+    ''' 
+    label_axis = placeAxesOnGrid(
+        fig, 
+        xspan=[xpos,xpos + 0.01],
+        yspan=[ypos,ypos + 0.01],
+    )
+    label_axis.text(0,0,label_text,**kwargs)
+    label_axis.axis('off')
+
+
+def scalebar(axis, x_pos, y_pos, x_length=None, y_length=None, x_text=None, y_text=None, x_buffer=0.25, y_buffer=0.25, scalebar_color='black', text_color='black', fontsize=10, linewidth=3):
+    '''
+    add a scalebar
+    input params:
+        axis: axis on which to add scalebar
+        x_pos: x position, in pixels
+        y_pos: y position, in pixels
+    '''
     if x_length is not None:
         axis.plot(
             [x_pos,x_pos + x_length],
