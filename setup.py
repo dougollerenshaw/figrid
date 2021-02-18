@@ -10,5 +10,6 @@ setup(name='mpl_figure_formatter',
     install_requires=[
     "matplotlib",
     "numpy",
+    "seaborn"
     ],
 )
