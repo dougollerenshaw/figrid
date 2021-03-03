@@ -8,3 +8,6 @@ __pycache__/
 
 # visual studio code
 .vscode
+
+# dist
+/dist
