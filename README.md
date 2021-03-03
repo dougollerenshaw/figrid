@@ -1,7 +1,7 @@
 # figgrid
 A wrapper for the matplotlib gridspec function.  Designed to make it easy to place axes on a pre-defined grid on a figure canvas. For example, maybe you want to lay out axes like this:
 
-![Alt text](examples/sample_figure_layout.png?raw=true "Sample Figure")
+![Alt text](examples/sample_figure_layout.png?raw=true "Sample Figure Layout")
 
 ## how it works
 The fundamental function to use is `place_axes_on_grid`. This will generate an evenly spaced 100x100 grid on the desired figure canvas. You can then specify how much of the figure canvas a given axis (or set of axes) will span.  
