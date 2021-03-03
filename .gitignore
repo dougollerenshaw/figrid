@@ -11,3 +11,6 @@ __pycache__/
 
 # dist
 /dist
+
+# notebook checkpoints
+*checkpoint*
