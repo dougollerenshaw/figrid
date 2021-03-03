@@ -78,19 +78,35 @@ def place_axes_on_grid(
 
 def add_label(fig, label_text, xpos, ypos, **kwargs):
     '''
-    add labels to a figure canvas using the placeAxesOnGrid infrastructure
-    fig: figure handle
-    label_text : text of label, 
-    xpos, ypos: floats from 0 to 1 defining where on the canvas the label should be
-    kwargs: additional keyword arguments for matplotlib text()
+    add a single label to a figure canvas using the place_axes_on_grid infrastructure
+    inputs:
+        fig: figure handle
+        label_text : text of label, 
+        xpos, ypos: floats from 0 to 1 defining where on the canvas the label should be
+        kwargs: additional keyword arguments for matplotlib text()
     ''' 
-    label_axis = placeAxesOnGrid(
+    label_axis = place_axes_on_grid(
         fig, 
         xspan=[xpos,xpos + 0.01],
         yspan=[ypos,ypos + 0.01],
     )
-    label_axis.text(0,0,label_text,**kwargs)
+    label_axis.text(0, 0, label_text, **kwargs)
     label_axis.axis('off')
+
+
+def add_labels(fig, labels):
+    '''
+    add multiple labels to a figure canvas using the place_axes_on_grid infrastructure
+    inputs:
+        fig: figure handle
+        labels: a list of dictionaries with the following key/value pairs (keys must be named as follows):
+            * label_text (required): text of label
+            * xpos (required): float from 0 to 1 defining horizontal position of label (0 = left, 1 = right)
+            * ypos (required): float from 0 to 1 defining vertical position of label (0 = top, 1 = bottom)
+            * any additional keyword arguments that can be passed to the matplotib text function (e.g., fontsize, weight, etc)
+    '''
+    for label in labels:
+        add_label(fig, **label)
 
 
 def scalebar(axis, x_pos, y_pos, x_length=None, y_length=None, x_text=None, y_text=None, x_buffer=0.25, y_buffer=0.25, scalebar_color='black', text_color='black', fontsize=10, linewidth=3):

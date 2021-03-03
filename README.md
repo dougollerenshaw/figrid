@@ -1,5 +1,7 @@
 # figgrid
-A wrapper for the matplotlib gridspec function.  Designed to make it easy to place axes on a pre-defined grid on a figure canvas.
+A wrapper for the matplotlib gridspec function.  Designed to make it easy to place axes on a pre-defined grid on a figure canvas. For example, maybe you want to lay out axes like this:
+
+![Alt text](examples/sample_figure_layout.png?raw=true "Sample Figure")
 
 ## how it works
 The fundamental function to use is `place_axes_on_grid`. This will generate an evenly spaced 100x100 grid on the desired figure canvas. You can then specify how much of the figure canvas a given axis (or set of axes) will span.  
@@ -31,27 +33,46 @@ some imports:
     import figrid as fg
 
     # import example figure code
-    from example_figures import *
+    import example_figures
+
+    # import maptlotlib
+    import matplotlib.pyplot as plt
+
+define a function to lay out the axes on a figure
 
     # define function to set up figure and axes
     def make_fig_ax():
         fig = plt.figure(figsize=(11,8.5))
         ax = {
-            'panel_A': ff.place_axes_on_grid(fig, xspan=[0, 0.3], yspan=[0, 0.45]),
-            'panel_B': ff.place_axes_on_grid(fig, xspan=[0.4, 1], yspan=[0, 0.45], dim=[3, 1], hspace=0.4),
-            'panel_C': ff.place_axes_on_grid(fig, xspan=[0, 0.4], yspan=[0.55, 1]),
-            'panel_D': ff.place_axes_on_grid(fig, xspan=[0.5, 1], yspan=[0.55, 1])
+            'panel_A': fg.place_axes_on_grid(fig, xspan=[0.05, 0.3], yspan=[0.05, 0.45]),
+            'panel_B': fg.place_axes_on_grid(fig, xspan=[0.4, 1], yspan=[0.05, 0.45], dim=[3, 1], hspace=0.4),
+            'panel_C': fg.place_axes_on_grid(fig, xspan=[0.05, 0.4], yspan=[0.57, 1]),
+            'panel_D': fg.place_axes_on_grid(fig, xspan=[0.5, 1], yspan=[0.57, 1])
         }
         
         return fig, ax
+
+make the figure
 
     # call function to make figure and axes
     fig, ax = make_fig_ax()
 
     # call individual plotting functions, with axes as inputs
-    heatmap(ax['panel_A'])
-    sinusoids(ax['panel_B'])
-    violins(ax['panel_C'])
-    scatterplot(ax['panel_D'])
+    example_figures.heatmap(ax['panel_A'])
+    example_figures.sinusoids(ax['panel_B'])
+    example_figures.violins(ax['panel_C'])
+    example_figures.scatterplot(ax['panel_D'])
+
+add some labels
+
+    labels = [
+        {'label_text':'A', 'xpos':0,    'ypos':0.05, 'fontsize':20, 'weight': 'bold', 'ha': 'right', 'va': 'bottom'},
+        {'label_text':'B', 'xpos':0.37, 'ypos':0.05, 'fontsize':20, 'weight': 'bold', 'ha': 'right', 'va': 'bottom'},
+        {'label_text':'C', 'xpos':0,    'ypos':0.55, 'fontsize':20, 'weight': 'bold', 'ha': 'right', 'va': 'bottom'},
+        {'label_text':'D', 'xpos':0.45, 'ypos':0.55, 'fontsize':20, 'weight': 'bold', 'ha': 'right', 'va': 'bottom'},
+    ]
+    fg.add_labels(fig, labels)
+
+Then we have this:
 
 ![Alt text](examples/sample_figure.png?raw=true "Sample Figure")

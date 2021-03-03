@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-import mpl_figure_formatter as ff
+import figrid as fg
 
 def heatmap(axis):
     '''
@@ -14,7 +14,7 @@ def heatmap(axis):
     axis.axis('off')
     
     # add a scalebar
-    ff.scalebar(
+    fg.scalebar(
         axis = axis,
         x_pos = 10,
         y_pos = 85,
@@ -41,7 +41,7 @@ def sinusoids(axis):
         axis[row].set_title('frequency = {:0.1f} Hz'.format(f))
     
     # add a scalebar
-    ff.scalebar(
+    fg.scalebar(
         axis = axis[2],
         x_pos = -0.25, 
         y_pos = -1.25, 
