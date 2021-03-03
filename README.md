@@ -1,10 +1,35 @@
-# mpl_figure_formatter
-Utilities for formatting matplotlib figures
+# figgrid
+A wrapper for the matplotlib gridspec function.  Designed to make it easy to place axes on a pre-defined grid on a figure canvas.
 
-# sample use:
+## how it works
+The fundamental function to use is `place_axes_on_grid`. This will generate an evenly spaced 100x100 grid on the desired figure canvas. You can then specify how much of the figure canvas a given axis (or set of axes) will span.  
 
-    # import package
-    import mpl_figure_formatter as ff
+## what it's good for
+Maybe it's just me, but I've always found matplotlib's gridspec function to be confusing. And simple NxM subplots can be too limiting. This makes it easy to place any number of axes at arbitrary locations on a figure. It's handy for making figures for publication.
+
+## a sample workflow
+1) Make some functions to generate the various subplots you want to display on a figure. Those functions should take an axis handle as an input.
+2) Define a figure canvas of the desired size.
+3) Define your axes, specifying their locations using `figrid.place_axes_on_grid()` (a dictionary is a handy data structure for storing your axis handles).
+4) Call your plotting functions with the axes as inputs.
+5) Add some axis labels that you can refer to from your figure legend.
+
+## syntax
+`figrid.place_axes_on_grid` takes the following inputs:
+* fig - the figure handle on which the axis will be placed
+* xspan - a two-element list or tuple defining the left and right edges of the axis, respectively. Numbers should be floats ranging from 0 to 1 and will be rounded to 2 decimal places.
+* yspan - a two-element list or tuple defining the top and bottom edges of the axis, respectively. Numbers should be floats ranging from 0 to 1 and will be rounded to 2 decimal places.
+* dim - a two-element tuple defining the number of rows/columns of the axis. Default = [1, 1], giving a single axis.
+* hspace = a float defining the horizontal space between subplots (if dim is specified)
+* vspace = a float defining the vertical space between subplots (if dim is specified)
+
+## sample use:
+
+some imports:
+
+    # import the package as fg
+    import figrid as fg
+
     # import example figure code
     from example_figures import *
 
