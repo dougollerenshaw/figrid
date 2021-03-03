@@ -16,6 +16,10 @@ Maybe it's just me, but I've always found matplotlib's gridspec function to be c
 4) Call your plotting functions with the axes as inputs.
 5) Add some axis labels that you can refer to from your figure legend.
 
+## installation:
+
+    pip install figrid
+    
 ## syntax
 `figrid.place_axes_on_grid` takes the following inputs:
 * fig - the figure handle on which the axis will be placed
