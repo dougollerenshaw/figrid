@@ -1,4 +1,4 @@
-# figgrid
+# figrid
 A wrapper for the matplotlib gridspec function.  Designed to make it easy to place axes on a pre-defined grid on a figure canvas. For example, maybe you want to lay out axes like this:
 
 <img src="examples/sample_figure_layout.png?raw=true " alt="Example Layout" style="zoom:40%;" />
@@ -19,7 +19,7 @@ Maybe it's just me, but I've always found matplotlib's gridspec function to be c
 ## installation:
 
     pip install figrid
-    
+
 ## syntax
 `figrid.place_axes_on_grid` takes the following inputs:
 * fig - the figure handle on which the axis will be placed
