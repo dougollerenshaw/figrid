@@ -1,0 +1,2 @@
+recursive-include mindscope_utilities *.py *.conf *.json *.txt *.yaml *.csv
+include README.md LICENSE

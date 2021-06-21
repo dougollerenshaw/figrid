@@ -4,7 +4,8 @@ figrid provides a set of convenience functions to make it easier to
 place axes on a grid using matplotlib
 '''
 setup(name='figrid',
-    version='0.1.0',
+    version='0.1.1',
+    packages=['figrid'],
     description='Formats multipanel figures',
     url='https://github.com/dougollerenshaw/figrid',
     author='Doug Ollerenshaw',
@@ -15,4 +16,12 @@ setup(name='figrid',
         "numpy",
         "seaborn"
     ],
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8'
+  ],
 )
