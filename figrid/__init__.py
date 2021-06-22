@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
+__version__ = '0.1.4'
+
 def place_axes_on_grid(
         fig,
         dim=[1, 1],
