@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
+__version__ = '0.1.4'
+
 def place_axes_on_grid(
         fig,
         dim=[1, 1],
@@ -14,7 +16,7 @@ def place_axes_on_grid(
         frameon=True):
     '''
     Takes a figure with a gridspec defined and places an array of sub-axes on a portion of the gridspec
-    DRO
+    
     Takes as arguments:
         fig: figure handle - required
         dim: number of rows and columns in the subaxes - defaults to 1x1
