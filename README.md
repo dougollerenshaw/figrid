@@ -3,6 +3,9 @@ A wrapper for the matplotlib gridspec function.  Designed to make it easy to pla
 
 <img src="examples/sample_figure_layout.png?raw=true " alt="Example Layout" style="zoom:40%;" />
 
+## try it out in colab:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14d9amK1YMJrYIpOULSzp-zJ_KCgP5wfg?usp=sharing]
+
 ## how it works
 The fundamental function to use is `place_axes_on_grid`. This will generate an evenly spaced 100x100 grid on the desired figure canvas. You can then specify how much of the figure canvas a given axis (or set of axes) will span.  
 
