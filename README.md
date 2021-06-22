@@ -3,7 +3,7 @@ A wrapper for the matplotlib gridspec function.  Designed to make it easy to pla
 
 <img src="examples/sample_figure_layout.png?raw=true " alt="Example Layout" style="zoom:40%;" />
 
-## try it out in colab:  
+## try it out in colab
 <a href="https://colab.research.google.com/github/dougollerenshaw/figrid/blob/colab_example/figrid_example_notebook.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## how it works
