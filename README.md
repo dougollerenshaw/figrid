@@ -10,14 +10,14 @@ A wrapper for the matplotlib gridspec function.  Designed to make it easy to pla
 The fundamental function to use is `place_axes_on_grid`. This will generate an evenly spaced 100x100 grid on the desired figure canvas. You can then specify how much of the figure canvas a given axis (or set of axes) will span.  
 
 ## what it's good for
-Maybe it's just me, but I've always found matplotlib's gridspec function to be confusing. And simple NxM subplots can be too limiting. This makes it easy to place any number of axes at arbitrary locations on a figure. It's handy for making figures for publication.
+Maybe it's just me, but I've always found matplotlib's `gridspec` function to be confusing. And simple NxM grids with the `subplots` function can be too limiting. This makes it easy to place any number of axes at arbitrary locations on a figure. It's handy for making figures for publication.
 
 ## a sample workflow
 1) Make some functions to generate the various subplots you want to display on a figure. Those functions should take an axis handle as an input.
 2) Define a figure canvas of the desired size.
-3) Define your axes, specifying their locations using `figrid.place_axes_on_grid()` (a dictionary is a handy data structure for storing your axis handles).
+3) Define your axes, specifying their locations using `figrid.place_axes_on_grid()` (a dictionary is a useful data structure for storing your axis handles).
 4) Call your plotting functions with the axes as inputs.
-5) Add some axis labels that you can refer to from your figure legend.
+5) Add some axis labels using `figrid.add_labels()` that you can refer to from your figure legend.
 
 ## installation:
 
