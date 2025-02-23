@@ -90,6 +90,8 @@ Then we have this:
 
 ## development and testing
 
+[![Tests](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml/badge.svg)](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml)
+
 To run the tests:
 
     pytest
