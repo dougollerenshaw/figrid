@@ -96,5 +96,7 @@ To run the tests:
 
 To run tests with coverage reporting:
 
-    pytest --cov=figrid
+    pytest --cov=figrid --cov-report=term-missing
+
+Tests are automatically run on push and pull request to the main branch using GitHub Actions.
 
