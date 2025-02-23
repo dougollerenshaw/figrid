@@ -23,6 +23,10 @@ Maybe it's just me, but I've always found matplotlib's `gridspec` function to be
 
     pip install figrid
 
+For development installation with testing dependencies:
+
+    pip install -e ".[dev]"
+
 ## syntax
 `figrid.place_axes_on_grid` takes the following inputs:
 * fig - the figure handle on which the axis will be placed
@@ -83,3 +87,18 @@ add some labels
 Then we have this:
 
 <img src="examples/sample_figure.png?raw=true " alt="Example Figure" style="zoom:100%;" />
+
+## development and testing
+
+[![Tests](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml/badge.svg)](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml)
+
+To run the tests:
+
+    pytest
+
+To run tests with coverage reporting:
+
+    pytest --cov=figrid --cov-report=term-missing
+
+Tests are automatically run on push and pull request to the main branch using GitHub Actions.
+
