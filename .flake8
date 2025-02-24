@@ -1,0 +1,9 @@
+[flake8]
+# Match black's default line length
+max-line-length = 88
+# See https://github.com/PyCQA/pycodestyle/issues/373
+extend-ignore = E203
+exclude = .git,__pycache__,build,dist
+per-file-ignores =
+    # Allow unused imports in __init__.py
+    __init__.py: F401
