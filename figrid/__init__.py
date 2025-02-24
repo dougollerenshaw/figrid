@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 
 def place_axes_on_grid(
@@ -73,13 +73,17 @@ def place_axes_on_grid(
             )
 
             if row == dim[0] - 1 and sharex:
+                # For shared x-axes, only show tick labels on the bottom subplot
                 inner_ax[row][col].xaxis.set_ticks_position("bottom")
             elif row < dim[0] and sharex:
-                plt.setp(inner_ax[row][col].get_xtick)
+                # Hide tick labels (but keep ticks) on all but the bottom subplot
+                plt.setp(inner_ax[row][col].get_xticklabels(), visible=False)
 
             if col == 0 and sharey:
+                # For shared y-axes, only show tick labels on the leftmost subplot
                 inner_ax[row][col].yaxis.set_ticks_position("left")
             elif col > 0 and sharey:
+                # Hide tick labels (but keep ticks) on all but the leftmost subplot
                 plt.setp(inner_ax[row][col].get_yticklabels(), visible=False)
 
             fig.add_subplot(inner_ax[row, col])

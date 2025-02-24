@@ -6,7 +6,7 @@ place axes on a grid using matplotlib
 """
 setup(
     name="figrid",
-    version="0.1.6",
+    version="0.1.7",
     packages=["figrid"],
     include_package_data=True,
     description="Formats multipanel figures",
