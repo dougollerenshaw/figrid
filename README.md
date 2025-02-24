@@ -92,6 +92,16 @@ Then we have this:
 
 [![Tests](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml/badge.svg)](https://github.com/dougollerenshaw/figrid/actions/workflows/tests.yml)
 
+For development, install with testing dependencies:
+
+    pip install -e ".[dev]"
+
+To set up pre-commit hooks for automatic code formatting:
+
+    pre-commit install
+
+This will automatically run black (code formatter) and flake8 (linter) on your commits.
+
 To run the tests:
 
     pytest
@@ -100,5 +110,13 @@ To run tests with coverage reporting:
 
     pytest --cov=figrid --cov-report=term-missing
 
-Tests are automatically run on push and pull request to the main branch using GitHub Actions.
+To manually format code:
+
+    black .
+
+To manually check code style:
+
+    flake8 .
+
+Tests and code quality checks are automatically run on push and pull request to the main branch using GitHub Actions.
 
