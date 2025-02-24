@@ -84,6 +84,22 @@ def test_multi_axis_grid(figure):
     assert len(axes[0]) == 2
 
 
+def test_shared_axes(figure):
+    """Test axes with shared x and y axes."""
+    axes = place_axes_on_grid(figure, dim=[2, 1], sharex=True)
+
+    # Axes should exist and be properly configured
+    assert len(axes) == 2
+
+    # Bottom axis should show ticks, top axis should share x scale
+    assert axes[0].get_shared_x_axes().joined(axes[0], axes[1])
+    assert axes[1].xaxis.get_ticks_position() == "bottom"
+
+    # Check that top axis has hidden tick labels
+    assert not any(label.get_visible() for label in axes[0].get_xticklabels())
+    assert all(label.get_visible() for label in axes[1].get_xticklabels())
+
+
 def test_axis_positioning(figure):
     """Test custom axis positioning."""
     ax = place_axes_on_grid(figure, dim=[1, 1], xspan=[0.2, 0.8], yspan=[0.2, 0.8])
